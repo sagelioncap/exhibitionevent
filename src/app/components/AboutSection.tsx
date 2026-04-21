@@ -9,7 +9,8 @@ const benefits = [
     painSub: 'Most exhibitions feel passive and disconnected',
     statValue: '30+',
     statSuffix: 'Installations',
-    solution: 'Immersive, multi-sensory installations that pull you inside the work — not just in front of it.',
+    solution:
+      'Immersive, multi-sensory installations that pull you inside the work — not just in front of it.',
   },
   {
     icon: 'UsersIcon',
@@ -18,7 +19,8 @@ const benefits = [
     painSub: 'No platform to meet the people behind the work',
     statValue: '120+',
     statSuffix: 'Artists Present',
-    solution: 'Live artist talks, open studios, and curated networking sessions built into every day of the event.',
+    solution:
+      'Live artist talks, open studios, and curated networking sessions built into every day of the event.',
   },
   {
     icon: 'ChartBarIcon',
@@ -27,7 +29,8 @@ const benefits = [
     painSub: 'Unclear where your attendance dollars go',
     statValue: '100%',
     statSuffix: 'Artist-Led',
-    solution: 'Every ticket sold funds participating artists directly. We publish full transparency reports after each event.',
+    solution:
+      'Every ticket sold funds participating artists directly. We publish full transparency reports after each event.',
   },
 ];
 
@@ -41,7 +44,8 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+            backgroundImage:
+              'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
@@ -76,7 +80,9 @@ export default function AboutSection() {
                 <div className="mb-8">
                   <div className="flex items-center gap-2 mb-4 text-white/40">
                     <Icon name={b.icon as 'EyeIcon'} size={18} className="text-white/40" />
-                    <span className="text-xs font-bold uppercase tracking-wider opacity-80">{b.label}</span>
+                    <span className="text-xs font-bold uppercase tracking-wider opacity-80">
+                      {b.label}
+                    </span>
                   </div>
                   <h3 className="text-lg font-medium text-white/80 leading-snug">{b.pain}</h3>
                   <p className="mt-2 text-sm text-white/40 font-medium">{b.painSub}</p>

@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Gallery', href: '#gallery' },
   { label: 'Schedule', href: '#schedule' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Admin', href: '/admin/sales' },
 ];
 
 export default function Header() {
@@ -31,10 +32,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <AppLogo
-            size={36}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          />
+          <AppLogo size={36} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
           <span className="font-bold text-lg text-foreground tracking-tight hidden sm:block">
             ExhibitionEvent
           </span>
@@ -67,11 +65,7 @@ export default function Header() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation"
         >
-          {mobileOpen ? (
-            <XMarkIcon className="w-6 h-6" />
-          ) : (
-            <Bars3Icon className="w-6 h-6" />
-          )}
+          {mobileOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
         </button>
       </div>
       {/* Mobile Menu */}

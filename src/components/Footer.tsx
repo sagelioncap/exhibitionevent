@@ -34,9 +34,7 @@ export default function Footer() {
         </nav>
 
         {/* Copyright */}
-        <p className="text-sm font-medium text-muted-foreground">
-          © 2026 ExhibitionEvent
-        </p>
+        <p className="text-sm font-medium text-muted-foreground">© 2026 ExhibitionEvent</p>
       </div>
     </footer>
   );

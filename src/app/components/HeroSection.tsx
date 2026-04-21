@@ -26,8 +26,8 @@ export default function HeroSection() {
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-[100px] animate-blob animation-delay-2000 pointer-events-none" />
       <div
         ref={glowRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none transition-transform duration-700 ease-out" />
-
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none transition-transform duration-700 ease-out"
+      />
 
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center relative z-10">
         {/* Left: Event Photo */}
@@ -39,7 +39,8 @@ export default function HeroSection() {
               alt="Bright modern exhibition hall with large artworks on white walls, warm gallery lighting, polished floors, airy open space"
               fill
               className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-              priority />
+              priority
+            />
 
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -75,47 +76,49 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1 className="hero-text font-extrabold text-foreground">
-            Where Art{' '}
-            <span className="text-primary">Meets</span>
+            Where Art <span className="text-primary">Meets</span>
             <br />
             Experience.
           </h1>
 
           {/* Sub */}
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl font-medium">
-            Eight days of immersive exhibitions, curated installations, and live talks from
-            artists redefining what it means to create in 2026.
+            Eight days of immersive exhibitions, curated installations, and live talks from artists
+            redefining what it means to create in 2026.
           </p>
 
           {/* Stats row */}
           <div className="flex flex-wrap gap-8">
             {[
-            { value: '120+', label: 'Exhibitors' },
-            { value: '8 Days', label: 'Of Events' },
-            { value: '15K+', label: 'Expected Visitors' }].
-            map((stat) =>
-            <div key={stat.label}>
+              { value: '120+', label: 'Exhibitors' },
+              { value: '8 Days', label: 'Of Events' },
+              { value: '15K+', label: 'Expected Visitors' },
+            ].map((stat) => (
+              <div key={stat.label}>
                 <p className="text-3xl font-extrabold text-primary tracking-tight">{stat.value}</p>
-                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{stat.label}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  {stat.label}
+                </p>
               </div>
-            )}
+            ))}
           </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-10 py-4 rounded-full hover:bg-secondary transition-all duration-200 shadow-lg shadow-primary/25">
-
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-10 py-4 rounded-full hover:bg-secondary transition-all duration-200 shadow-lg shadow-primary/25"
+            >
               Attend the Event
               <Icon name="ArrowRightIcon" size={16} className="text-primary-foreground" />
             </a>
-            <a
-              href="#schedule"
-              className="inline-flex items-center gap-4 group">
-
+            <a href="#schedule" className="inline-flex items-center gap-4 group">
               <div className="w-14 h-14 rounded-full border-2 border-border flex items-center justify-center group-hover:border-primary transition-colors duration-200">
-                <Icon name="CalendarDaysIcon" size={22} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                <Icon
+                  name="CalendarDaysIcon"
+                  size={22}
+                  className="text-muted-foreground group-hover:text-primary transition-colors"
+                />
               </div>
               <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors">
                 View Schedule
@@ -127,9 +130,11 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Scroll</span>
+        <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+          Scroll
+        </span>
         <div className="w-px h-8 bg-gradient-to-b from-primary to-transparent" />
       </div>
-    </section>);
-
+    </section>
+  );
 }

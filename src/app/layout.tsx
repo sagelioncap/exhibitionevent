@@ -18,22 +18,26 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'ExhibitionEvent — Where Art Meets Experience',
-  description: 'Explore a curated exhibition event featuring world-class art, immersive installations, and inspiring talks. Register to attend and be part of the experience.',
+  description:
+    'Explore a curated exhibition event featuring world-class art, immersive installations, and inspiring talks. Register to attend and be part of the experience.',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={plusJakartaSans.variable}>
       <body className={plusJakartaSans.className}>
         {children}
 
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fexhibition7333back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.18" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></body>
+        <script
+          type="module"
+          async
+          src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fexhibition7333back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.18"
+        />
+        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" />
+      </body>
     </html>
   );
 }

@@ -4,19 +4,19 @@ import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
 const avatars = [
-{
-  src: "https://img.rocket.new/generatedImages/rocket_gen_img_1cd88554e-1776776878976.png",
-  alt: 'Attendee avatar'
-},
-{
-  src: "https://img.rocket.new/generatedImages/rocket_gen_img_1cd88554e-1776776878976.png",
-  alt: 'Attendee avatar'
-},
-{
-  src: "https://img.rocket.new/generatedImages/rocket_gen_img_1cd88554e-1776776878976.png",
-  alt: 'Attendee avatar'
-}];
-
+  {
+    src: 'https://img.rocket.new/generatedImages/rocket_gen_img_1cd88554e-1776776878976.png',
+    alt: 'Attendee avatar',
+  },
+  {
+    src: 'https://img.rocket.new/generatedImages/rocket_gen_img_1cd88554e-1776776878976.png',
+    alt: 'Attendee avatar',
+  },
+  {
+    src: 'https://img.rocket.new/generatedImages/rocket_gen_img_1cd88554e-1776776878976.png',
+    alt: 'Attendee avatar',
+  },
+];
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -24,11 +24,13 @@ export default function ContactSection() {
     email: '',
     phone: '',
     attendees: '',
-    message: ''
+    message: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -47,9 +49,10 @@ export default function ContactSection() {
         className="absolute inset-0 opacity-[0.03] mix-blend-soft-light pointer-events-none"
         style={{
           backgroundImage:
-          'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }} />
+            'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
       <div className="diagonal-rays absolute inset-0 pointer-events-none opacity-10" />
 
@@ -80,21 +83,21 @@ export default function ContactSection() {
             {/* Trust indicators */}
             <div className="space-y-4">
               {[
-              {
-                icon: 'TicketIcon',
-                title: 'Flexible ticket options',
-                desc: 'Day passes, full-event passes, and group discounts available.'
-              },
-              {
-                icon: 'ShieldCheckIcon',
-                title: 'No commitment required',
-                desc: 'Just reach out — we\'ll answer your questions first.'
-              }].
-              map((item) =>
-              <div
-                key={item.title}
-                className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
-
+                {
+                  icon: 'TicketIcon',
+                  title: 'Flexible ticket options',
+                  desc: 'Day passes, full-event passes, and group discounts available.',
+                },
+                {
+                  icon: 'ShieldCheckIcon',
+                  title: 'No commitment required',
+                  desc: "Just reach out — we'll answer your questions first.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.08] transition-colors duration-300"
+                >
                   <div className="shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary">
                     <Icon name={item.icon as 'TicketIcon'} size={18} />
                   </div>
@@ -103,22 +106,22 @@ export default function ContactSection() {
                     <p className="text-sm text-white/65 leading-snug">{item.desc}</p>
                   </div>
                 </div>
-              )}
+              ))}
             </div>
 
             {/* Social proof */}
             <div className="flex items-center gap-4 pt-2 border-t border-white/10">
               <div className="flex -space-x-3">
-                {avatars.map((a, i) =>
-                <AppImage
-                  key={i}
-                  src={a.src}
-                  alt={a.alt}
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 object-cover rounded-full border-2 border-foreground" />
-
-                )}
+                {avatars.map((a, i) => (
+                  <AppImage
+                    key={i}
+                    src={a.src}
+                    alt={a.alt}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-cover rounded-full border-2 border-foreground"
+                  />
+                ))}
                 <div className="w-10 h-10 rounded-full border-2 border-foreground bg-white/10 text-white text-xs font-semibold flex items-center justify-center">
                   +15K
                 </div>
@@ -126,9 +129,15 @@ export default function ContactSection() {
               <div>
                 <p className="text-white font-semibold text-sm">Visitors attended last edition</p>
                 <div className="flex gap-0.5 mt-0.5">
-                  {[...Array(5)].map((_, i) =>
-                  <Icon key={i} name="StarIcon" size={12} variant="solid" className="text-accent" />
-                  )}
+                  {[...Array(5)].map((_, i) => (
+                    <Icon
+                      key={i}
+                      name="StarIcon"
+                      size={12}
+                      variant="solid"
+                      className="text-accent"
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -139,8 +148,8 @@ export default function ContactSection() {
             <div className="bg-card rounded-[2rem] p-8 shadow-2xl shadow-black/20 relative overflow-hidden border border-white/10">
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl opacity-70 pointer-events-none" />
 
-              {submitted ?
-              <div className="flex flex-col items-center justify-center py-16 text-center relative z-10">
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center py-16 text-center relative z-10">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
                     <Icon name="CheckCircleIcon" size={36} className="text-primary" />
                   </div>
@@ -148,9 +157,9 @@ export default function ContactSection() {
                   <p className="text-muted-foreground max-w-xs">
                     We&apos;ll be in touch within 24 hours with your ticketing options.
                   </p>
-                </div> :
-
-              <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                   <div className="mb-5">
                     <h3 className="text-2xl font-bold text-foreground tracking-tight mb-1">
                       Get in Touch
@@ -162,7 +171,10 @@ export default function ContactSection() {
 
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2"
+                    >
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
@@ -170,21 +182,24 @@ export default function ContactSection() {
                         <Icon name="UserIcon" size={16} />
                       </div>
                       <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      className="w-full bg-input border border-border rounded-xl pl-11 pr-4 py-3.5 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200" />
-
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your full name"
+                        className="w-full bg-input border border-border rounded-xl pl-11 pr-4 py-3.5 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      />
                     </div>
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2"
+                    >
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
@@ -192,33 +207,38 @@ export default function ContactSection() {
                         <Icon name="EnvelopeIcon" size={16} />
                       </div>
                       <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="you@example.com"
-                      className="w-full bg-input border border-border rounded-xl pl-11 pr-4 py-3.5 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200" />
-
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                        className="w-full bg-input border border-border rounded-xl pl-11 pr-4 py-3.5 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      />
                     </div>
                   </div>
 
                   {/* Attendees */}
                   <div>
-                    <label htmlFor="attendees" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                    <label
+                      htmlFor="attendees"
+                      className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2"
+                    >
                       Number of Attendees <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
-                      id="attendees"
-                      name="attendees"
-                      required
-                      value={formData.attendees}
-                      onChange={handleChange}
-                      className="appearance-none w-full bg-input border border-border rounded-xl pl-4 pr-10 py-3.5 text-foreground text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 cursor-pointer">
-
-                        <option value="" disabled>Select number of attendees</option>
+                        id="attendees"
+                        name="attendees"
+                        required
+                        value={formData.attendees}
+                        onChange={handleChange}
+                        className="appearance-none w-full bg-input border border-border rounded-xl pl-4 pr-10 py-3.5 text-foreground text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 cursor-pointer"
+                      >
+                        <option value="" disabled>
+                          Select number of attendees
+                        </option>
                         <option value="1">Just me (1 person)</option>
                         <option value="2-5">Small group (2–5 people)</option>
                         <option value="6-20">Group (6–20 people)</option>
@@ -232,41 +252,53 @@ export default function ContactSection() {
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2"
+                    >
                       Message{' '}
-                      <span className="text-muted-foreground font-normal normal-case">(optional)</span>
+                      <span className="text-muted-foreground font-normal normal-case">
+                        (optional)
+                      </span>
                     </label>
                     <textarea
-                    id="message"
-                    name="message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Any questions or special requirements?"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none" />
-
+                      id="message"
+                      name="message"
+                      rows={3}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Any questions or special requirements?"
+                      className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none"
+                    />
                   </div>
 
                   {/* Submit */}
                   <div className="pt-2">
                     <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:bg-secondary transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 group">
-
+                      type="submit"
+                      className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:bg-secondary transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 group"
+                    >
                       Send My Enquiry
-                      <Icon name="ArrowRightIcon" size={16} className="text-primary-foreground group-hover:translate-x-1 transition-transform" />
+                      <Icon
+                        name="ArrowRightIcon"
+                        size={16}
+                        className="text-primary-foreground group-hover:translate-x-1 transition-transform"
+                      />
                     </button>
                     <p className="text-center text-[11px] text-muted-foreground mt-4 leading-relaxed">
                       By submitting you agree to our{' '}
-                      <a href="#" className="underline hover:text-foreground">Privacy Policy</a>.
+                      <a href="#" className="underline hover:text-foreground">
+                        Privacy Policy
+                      </a>
+                      .
                     </p>
                   </div>
                 </form>
-              }
+              )}
             </div>
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
